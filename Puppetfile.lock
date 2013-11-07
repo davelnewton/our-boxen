@@ -9,6 +9,16 @@ GITHUBTARBALL
     dnsmasq (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-elasticsearch
+  specs:
+    elasticsearch (2.0.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-erlang
+  specs:
+    erlang (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-foreman
   specs:
     foreman (1.0.0)
@@ -37,6 +47,26 @@ GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
     hub (1.0.3)
+
+GITHUBTARBALL
+  remote: boxen/puppet-imagemagick
+  specs:
+    imagemagick (1.2.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-java
+  specs:
+    java (1.1.2)
+
+GITHUBTARBALL
+  remote: boxen/puppet-memcached
+  specs:
+    memcached (1.3.0)
+
+GITHUBTARBALL
+  remote: boxen/puppet-mongodb
+  specs:
+    mongodb (1.0.5)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -84,6 +114,16 @@ GITHUBTARBALL
     xquartz (1.1.0)
 
 GITHUBTARBALL
+  remote: crowdtap/puppet-rabbitmq
+  specs:
+    rabbitmq (0.4.1)
+
+GITHUBTARBALL
+  remote: davelnewton/puppet-redis
+  specs:
+    redis (1.1.0)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.0.0)
@@ -96,18 +136,26 @@ GITHUBTARBALL
 DEPENDENCIES
   boxen (= 3.3.4)
   dnsmasq (= 1.0.0)
+  elasticsearch (= 2.0.0)
+  erlang (= 1.0.1)
   foreman (= 1.0.0)
   gcc (= 2.0.1)
   git (= 1.2.5)
   go (= 1.0.0)
   homebrew (= 1.5.1)
   hub (= 1.0.3)
+  imagemagick (= 1.2.1)
   inifile (= 1.0.0)
+  java (= 1.1.2)
+  memcached (= 1.3.0)
+  mongodb (= 1.0.5)
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
   openssl (= 1.0.0)
   phantomjs (= 2.0.2)
   pkgconfig (= 1.0.0)
+  rabbitmq (= 0.4.1)
+  redis (= 1.1.0)
   repository (= 2.2.0)
   ruby (= 6.7.2)
   stdlib (= 4.1.0)
