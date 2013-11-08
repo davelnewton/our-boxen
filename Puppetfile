@@ -68,4 +68,4 @@ github "redis", "1.1.0" #, :repo => "davelnewton/puppet-redis"
 # github "elasticsearch", "2.0.0"
 # github "java", "1.1.2"
 
-github "augeas",    "1.3.1"
+# github "augeas",    "1.3.1"

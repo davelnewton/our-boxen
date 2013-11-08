@@ -24,6 +24,13 @@ Exec {
   ]
 }
 
+define sreplace($new, $file) {
+  exec {
+    "sed -i -e 's/$name/$new/g' $file":
+      path => "/bin:/usr/bin"
+  }
+}
+
 File {
   group => 'staff',
   owner => $boxen_user
@@ -78,12 +85,11 @@ node default {
   #include imagemagick
   # include imagemagick
   # include memcached
+
   include redis
 
-  include augeas
-  augeas { "redis.conf":
-    # require => Package[redis],
-    context => "/etc/redis.conf"
+  sreplace {
+    "daemonize no": new => "daemonize yes", file => "${redis::config::configfile}"
   }
 
   # include mongodb
