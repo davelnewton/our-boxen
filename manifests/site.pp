@@ -57,6 +57,7 @@ node default {
   include git
   include hub
   include nginx
+  include augeas
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -78,7 +79,7 @@ node default {
   #include imagemagick
   # include imagemagick
   # include memcached
-  # include redis
+  include redis
   # include mongodb
   # include "::rabbitmq"
   # include elasticsearch
@@ -96,5 +97,15 @@ node default {
   file { "${boxen::config::srcdir}/our-boxen":
     ensure => link,
     target => $boxen::config::repodir
+  }
+
+  # file {
+  #   '/tmp/hello':
+  #     content => "Hello, world!\n"
+  # }
+
+  augeas { "redis.conf":
+    lens    => "Spacevars.lns",
+    incl    => "/etc/redis.conf"
   }
 }
