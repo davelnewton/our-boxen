@@ -78,12 +78,11 @@ node default {
   #include imagemagick
   # include imagemagick
   # include memcached
+  include redis
 
   include augeas
-
-  include redis
   augeas { "redis.conf":
-    require => Package[redis],
+    # require => Package[redis],
     context => "/etc/redis.conf"
   }
 
