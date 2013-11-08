@@ -60,7 +60,7 @@ github "imagemagick", "1.2.1"
 github "memcached", "1.3.0"
 
 # Daemonize change.
-github "redis", "1.1.0", :repo => "davelnewton/puppet-redis"
+github "redis", "1.1.0" #, :repo => "davelnewton/puppet-redis"
 
 github "mongodb", "1.0.5"
 github "erlang", "1.0.1"
