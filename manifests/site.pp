@@ -78,13 +78,19 @@ node default {
   #include imagemagick
   # include imagemagick
   # include memcached
+
+  include augeas
+
   include redis
+  augeas { "redis.conf":
+    require => Package[redis],
+    context => "/etc/redis.conf"
+  }
+
   # include mongodb
   # include "::rabbitmq"
   # include elasticsearch
   # include java
-
-  include augeas
 
   # common, useful packages
   package {
@@ -104,10 +110,5 @@ node default {
   # file {
   #   '/tmp/hello':
   #     content => "Hello, world!\n"
-  # }
-
-  # augeas { "redis.conf":
-  #   lens    => "Spacevars.lns",
-  #   incl    => "/etc/redis.conf"
   # }
 }
