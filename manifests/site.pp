@@ -73,8 +73,8 @@ node default {
   # node versions
   # include nodejs::v0_4
   # include nodejs::v0_6
-  # include nodejs::v0_8
-  # include nodejs::v0_10
+  include nodejs::v0_8
+  include nodejs::v0_10
 
   # default ruby versions
   # include ruby::1_8_7
@@ -82,12 +82,16 @@ node default {
   include ruby::1_9_3
   # include ruby::2_0_0
 
-  #include imagemagick
-  # include imagemagick
+  include imagemagick
+
   # include memcached
+  class {
+    'memcached':
+      port => 8000,
+      notify => Service["dev.memcached"]
+  }
 
   include redis
-
   sreplace {
     "daemonize no":
       new => "daemonize yes",
@@ -96,14 +100,20 @@ node default {
   }
 
   include mongodb
-
   sreplace {
     "\\/opt\\/boxen\\/data\\/mongodb":
       new => "\\/data\\/db",
       file => "${mongodb::config::configfile}",
       notify => Service["dev.mongodb"]
   }
+  sreplace {
+    "17017":
+      new => "27017",
+      file => "${mongodb::config::configfile}",
+      notify => Service["dev.mongodb"]
+  }
 
+  # include erlang
   # include "::rabbitmq"
   # include elasticsearch
   # include java

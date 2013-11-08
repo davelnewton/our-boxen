@@ -43,9 +43,9 @@ github "homebrew",   "1.5.1"
 github "hub",        "1.0.3"
 github "inifile",    "1.0.0", :repo => "puppetlabs/puppetlabs-inifile"
 github "nginx",      "1.4.2"
-# github "nodejs",     "3.3.0"
+github "nodejs",     "3.3.0"
 github "openssl",    "1.0.0"
-# github "phantomjs",  "2.0.2"
+github "phantomjs",  "2.0.2"
 github "pkgconfig",  "1.0.0"
 github "repository", "2.2.0"
 github "ruby",       "6.7.2"
@@ -56,16 +56,12 @@ github "xquartz",    "1.1.0"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 
-# github "imagemagick", "1.2.1"
-# github "memcached", "1.3.0"
-
-# Daemonize change.
-github "redis", "1.1.0" #, :repo => "davelnewton/puppet-redis"
-
+github "imagemagick", "1.2.1"
+github "memcached", "1.3.0"
+github "redis", "1.1.0"
 github "mongodb", "1.0.5"
+
 # github "erlang", "1.0.1"
 # github "rabbitmq", "0.4.1", :repo => "crowdtap/puppet-rabbitmq"
 # github "elasticsearch", "2.0.0"
 # github "java", "1.1.2"
-
-# github "augeas",    "1.3.1"
