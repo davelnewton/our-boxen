@@ -62,7 +62,7 @@ github "xquartz",    "1.1.0"
 # Daemonize change.
 github "redis", "1.1.0" #, :repo => "davelnewton/puppet-redis"
 
-# github "mongodb", "1.0.5"
+github "mongodb", "1.0.5"
 # github "erlang", "1.0.1"
 # github "rabbitmq", "0.4.1", :repo => "crowdtap/puppet-rabbitmq"
 # github "elasticsearch", "2.0.0"

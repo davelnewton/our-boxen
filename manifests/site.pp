@@ -89,10 +89,21 @@ node default {
   include redis
 
   sreplace {
-    "daemonize no": new => "daemonize yes", file => "${redis::config::configfile}"
+    "daemonize no":
+      new => "daemonize yes",
+      file => "${redis::config::configfile}",
+      notify => Service["dev.redis"]
   }
 
-  # include mongodb
+  include mongodb
+
+  sreplace {
+    "\\/opt\\/boxen\\/data\\/mongodb":
+      new => "\\/data\\/db",
+      file => "${mongodb::config::configfile}",
+      notify => Service["dev.mongodb"]
+  }
+
   # include "::rabbitmq"
   # include elasticsearch
   # include java
@@ -113,8 +124,9 @@ node default {
     target => $boxen::config::repodir
   }
 
-  # file {
-  #   '/tmp/hello':
-  #     content => "Hello, world!\n"
-  # }
+  file {
+    [ "/data", "/data/db"]:
+      ensure => "directory"
+  }
+
 }
