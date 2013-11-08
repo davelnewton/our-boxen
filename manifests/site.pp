@@ -57,7 +57,6 @@ node default {
   include git
   include hub
   include nginx
-  include augeas
 
   # fail if FDE is not enabled
   if $::root_encrypted == 'no' {
@@ -85,11 +84,14 @@ node default {
   # include elasticsearch
   # include java
 
+  include augeas
+
   # common, useful packages
   package {
     [
       'ack',
       'findutils',
+      'patchutils',
       'gnu-tar'
     ]:
   }
@@ -104,8 +106,8 @@ node default {
   #     content => "Hello, world!\n"
   # }
 
-  augeas { "redis.conf":
-    lens    => "Spacevars.lns",
-    incl    => "/etc/redis.conf"
-  }
+  # augeas { "redis.conf":
+  #   lens    => "Spacevars.lns",
+  #   incl    => "/etc/redis.conf"
+  # }
 }
