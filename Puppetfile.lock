@@ -9,6 +9,11 @@ GITHUBTARBALL
     dnsmasq (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-erlang
+  specs:
+    erlang (1.0.1)
+
+GITHUBTARBALL
   remote: boxen/puppet-foreman
   specs:
     foreman (1.0.0)
@@ -116,6 +121,7 @@ GITHUBTARBALL
 DEPENDENCIES
   boxen (= 3.3.4)
   dnsmasq (= 1.0.0)
+  erlang (= 1.0.1)
   foreman (= 1.0.0)
   gcc (= 2.0.1)
   git (= 1.2.5)

@@ -99,6 +99,15 @@ node default {
       notify => Service["dev.redis"]
   }
 
+  #
+  # Mongo-related
+  #
+
+  file {
+    [ "/data", "/data/db"]:
+      ensure => "directory"
+  }
+
   include mongodb
   sreplace {
     "\\/opt\\/boxen\\/data\\/mongodb":
@@ -113,7 +122,7 @@ node default {
       notify => Service["dev.mongodb"]
   }
 
-  # include erlang
+  include erlang
   # include "::rabbitmq"
   # include elasticsearch
   # include java
@@ -133,10 +142,4 @@ node default {
     ensure => link,
     target => $boxen::config::repodir
   }
-
-  file {
-    [ "/data", "/data/db"]:
-      ensure => "directory"
-  }
-
 }
