@@ -133,7 +133,7 @@ node default {
       'ack',
       'findutils',
       'patchutils',
-      'gnu-tar',
+      # 'gnu-tar',
       'tree'
     ]:
   }
